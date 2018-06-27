@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:startup_namer/simple.dart';
 
+
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -100,7 +101,7 @@ class RandomWordsState extends State<RandomWords> {
       subtitle: new Text(pair.asCamelCase,style: _smallFont,),
       trailing: new Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
-        color: alreadySaved ? Colors.red[300] : null,
+        color: alreadySaved ? Colors.red[600] : null,
       ),
       onTap: () {
         setState(() {
@@ -125,17 +126,15 @@ class RandomWordsState extends State<RandomWords> {
                   style: _biggerFont,
                 ),
                 onTap: (){
-                  Navigator.of(context).push(
-                    new MaterialPageRoute(builder: (context) {
-                      return new Simple();
-                    })
+                  Navigator.push(
+                    context,
+                    new MaterialPageRoute(builder: (context) => Simple())
                   );
                 },
               );
             },
           );
-          final divided = ListTile
-              .divideTiles(
+          final divided = ListTile.divideTiles(
             context: context,
             tiles: tiles,
           )
