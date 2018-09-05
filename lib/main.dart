@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 import 'package:startup_namer/simple.dart';
+import 'camera.dart';
 
 
 void main() => runApp(new MyApp());
@@ -58,7 +59,10 @@ class RandomWordsState extends State<RandomWords> {
                 // Update the state of the app
                 // ...
                 // Then close the drawer
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(builder: (context) => CameraApp())
+                );
               },
             ),
             ListTile(
