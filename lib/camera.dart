@@ -60,7 +60,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
                   color: controller != null && controller.value.isRecordingVideo
                       ? Colors.redAccent
                       : Colors.grey,
-                  width: 1.0,
+                  width: 0.2,
                 ),
               ),
             ),
@@ -168,7 +168,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
   /// Display a row of toggle to select the camera (or a message if no camera is available).
   Widget _cameraTogglesRowWidget() {
     final List<Widget> toggles = <Widget>[];
-    if(cameras != null){
+//    if(cameras != null){
       if (cameras.isEmpty) {
         return const Text('No camera found');
       } else {
@@ -188,7 +188,7 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
             ),
           );
         }
-      }
+//      }
     }
 
 
@@ -351,7 +351,9 @@ class _CameraExampleHomeState extends State<CameraExampleHome> {
 class CameraApp extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    sy();
+    sy().then((_){
+
+    });
     return new MaterialApp(
       home: new CameraExampleHome(),
     );
